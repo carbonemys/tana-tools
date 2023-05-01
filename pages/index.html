@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tana tools</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #f5f5f5;
+        line-height: 1.6;
+      }
+      css Copy code h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: bold;
+        color: #f0c674;
+      }
+
+      a {
+        color: #81a2be;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 20px;
+      }
+
+      ul li:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #b5bd68;
+      }
+
+      code {
+        background-color: #1e1e1e;
+        border-radius: 3px;
+        padding: 3px;
+        font-family: 'Courier New', monospace;
+        color: #c5c8c6;
+      }
+
+      pre {
+        background-color: #1e1e1e;
+        border-radius: 3px;
+        padding: 10px;
+        font-family: 'Courier New', monospace;
+        color: #c5c8c6;
+        white-space: pre-wrap;
+      }
+
+      .endpoint {
+        background-color: #282a2e;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      .endpoint-name {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      .endpoint-description {
+        margin-top: 10px;
+      }
+
+      .endpoint-url {
+        margin: 10px 0;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tana tools</h1>
+    <h2>Introduction</h2>
+    <p>
+      This will become a collection of open and free endpoints which can be used
+      with Tana. Created and maintained by https://twitter.com/BasB3.
+    </p>
+
+    <h2>1. YouTube transcript endpoint</h2>
+    <p>
+      API requests should be made to the following base URL:
+      <code>https://tana-tools.bb-projects.nl/youtube_transcript/</code>
+    </p>
+
+    <h2>Endpoints</h2>
+    <div class="endpoint">
+      <div class="endpoint-name">GET /youtube_transcript/</div>
+      <div class="endpoint-description">
+        <p>Retrieve the user's information by their unique identifier.</p>
+        <h3>URL Parameters</h3>
+        <ul>
+          <li>
+            <code>youtube_url</code> - YouTube URL (any format) or YouTube id
+            both work.
+          </li>
+        </ul>
+        <h3>Example Request</h3>
+        <pre>
+GET https://tana-tools.bb-projects.nl/youtube_transcript/?youtube_url=https://www.youtube.com/watch?v=yu7n0XzqtfA&pp=ygUPbWFyY3VzIGF1cmVsaXVz</pre
+        >
+        <h3>Response</h3>
+        <p>Raw text with the youtube transcript if available.</p>
+        <pre>
+this is a film about ism and why you need your life because as people seldom tell you but we will quietly stoicism was a philosophy that flourished for 480 years in ancient Greece and Rome and was popular with everyone from slaves to the aristocracy because unlike so much philosophy it was helpful ...</pre
+        >
+      </div>
+    </div>
+  </body>
+</html>

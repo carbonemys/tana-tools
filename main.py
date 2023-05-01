@@ -1,11 +1,10 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    name = os.environ.get("NAME", "World")
-    return "Hello {}!".format(name)
+def serve_index():
+    return send_from_directory('pages', 'index.html')
 
 @app.route('/youtube_transcript')
 def new_endpoint():

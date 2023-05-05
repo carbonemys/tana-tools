@@ -7,7 +7,7 @@ def serve_index():
     return send_from_directory('pages', 'index.html')
 
 @app.route('/youtube_transcript')
-def new_endpoint():
+def youtube_transcript_endpoint():
     youtube_url = request.args.get('youtube_url')
     from tools.youtube_transcript import youtube_transcript
     return youtube_transcript(youtube_url)

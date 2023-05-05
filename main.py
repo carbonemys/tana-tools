@@ -17,7 +17,7 @@ def youtube_detail_endpoint():
     youtube_url = request.args.get('youtube_url')
     youtube_detail_args = request.args.get('youtube_detail')
     from tools.youtube_detail import youtube_detail
-    return youtube_detail(youtube_url, youtube_detail)
+    return youtube_detail(youtube_url, youtube_detail_args)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

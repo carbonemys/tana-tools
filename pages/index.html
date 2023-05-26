@@ -120,6 +120,25 @@ GET https://tana-tools.bb-projects.nl/youtube_transcript?youtube_url=https://www
 this is a film about ism and why you need your life because as people seldom tell you but we will quietly stoicism was a philosophy that flourished for 480 years in ancient Greece and Rome and was popular with everyone from slaves to the aristocracy because unlike so much philosophy it was helpful ...</pre
         >
       </div>
+
+      <div class="endpoint-name">GET /pdf_transcript</div>
+      <div class="endpoint-description">
+        <p>Retrieve the transcript from a PDF by its unique URL.</p>
+        <h3>URL Parameters</h3>
+        <ul>
+          <li>
+            <code>pdf_url</code> - URL of the PDF from which transcript is to be
+            extracted.
+          </li>
+        </ul>
+        <h3>Example Request</h3>
+        <pre>
+  GET https://tana-tools.bb-projects.nl/pdf_transcript?pdf_url=https://example.com/sample.pdf</pre
+        >
+        <h3>Response</h3>
+        <p>Raw text with the PDF transcript if available.</p>
+        <pre>      Example of a pdf transcript ...</pre>
+      </div>
     </div>
   </body>
 </html>

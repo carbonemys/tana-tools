@@ -109,15 +109,28 @@
             <code>youtube_url</code> - YouTube URL (any format) or YouTube id
             both work.
           </li>
+          <li>
+            <code>newline</code> - (Optional) Determines whether to include
+            newline characters in the transcript.
+            <ul>
+              <li>
+                <code>true</code> - Include newline characters in the
+                transcript.
+              </li>
+              <li>
+                <code>false</code> - Exclude newline characters (default).
+              </li>
+            </ul>
+          </li>
         </ul>
         <h3>Example Request</h3>
         <pre>
-GET https://tana-tools.bb-projects.nl/youtube_transcript?youtube_url=https://www.youtube.com/watch?v=yu7n0XzqtfA&pp=ygUPbWFyY3VzIGF1cmVsaXVz</pre
+      GET https://tana-tools.bb-projects.nl/youtube_transcript?youtube_url=https://www.youtube.com/watch?v=yu7n0XzqtfA&pp=ygUPbWFyY3Vz&newline=true</pre
         >
         <h3>Response</h3>
-        <p>Raw text with the youtube transcript if available.</p>
+        <p>Raw text with the YouTube transcript if available.</p>
         <pre>
-this is a film about ism and why you need your life because as people seldom tell you but we will quietly stoicism was a philosophy that flourished for 480 years in ancient Greece and Rome and was popular with everyone from slaves to the aristocracy because unlike so much philosophy it was helpful ...</pre
+      This is a film about Stoicism and why you need it in your life. Because, as people seldom tell you (but we will), Stoicism was a philosophy that flourished for 480 years in ancient Greece and Rome and was popular with everyone from slaves to the aristocracy because, unlike so much philosophy, it was helpful ...</pre
         >
       </div>
 

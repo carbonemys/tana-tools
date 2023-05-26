@@ -9,6 +9,8 @@ def serve_index():
 @app.route('/youtube_transcript')
 def youtube_transcript_endpoint():
     youtube_url = request.args.get('youtube_url')
+    newline = request.args.get('newline')
+    newline = newline.lower() == 'true'
     from tools.youtube_transcript import youtube_transcript
     return youtube_transcript(youtube_url)
 

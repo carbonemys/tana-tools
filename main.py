@@ -10,7 +10,12 @@ def serve_index():
 def youtube_transcript_endpoint():
     youtube_url = request.args.get('youtube_url')
     newline = request.args.get('newline')
-    newline = newline.lower() == 'true'
+
+    if newline is not None:
+        newline = newline.lower() == 'true'
+    else:
+        newline = False
+        
     from tools.youtube_transcript import youtube_transcript
     return youtube_transcript(youtube_url)
 

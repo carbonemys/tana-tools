@@ -32,5 +32,16 @@ def pdf_transcript_endpoint():
     from tools.pdf_transcript import pdf_transcript
     return pdf_transcript(pdf_url)
 
+@app.route('/tweet')
+def tweet_endpoint():
+    tweet_url = request.args.get('tweet_url')
+    twitter_detail = request.args.get('twitter_detail', 'content')
+    from tools.tweet_info import tweet_info
+    username, content = tweet_info(tweet_url)
+    if twitter_detail == 'username':
+        return username
+    else:
+        return content
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

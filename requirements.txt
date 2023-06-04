@@ -3,3 +3,4 @@ gunicorn==20.1.0
 youtube-transcript-api
 bs4
 PyPDF2
+snscrape

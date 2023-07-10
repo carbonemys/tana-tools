@@ -16,8 +16,7 @@ def youtube_detail(youtube_url, youtube_detail):
         channel_element = soup.find('span', {'itemprop': 'author'})
         if (channel_element):
             channel_name = channel_element.find('link', {'itemprop': 'name'})['content']
-            channel_url = 'https://www.youtube.com' + channel_element.find('link', {'itemprop': 'url'})['href']
-            return f'<a href="{channel_url}">{channel_name}</a>'
+            return channel_name
         else:
             return 'Error: channel not found'
     else:

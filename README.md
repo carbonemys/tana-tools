@@ -18,6 +18,7 @@ The service exposes several HTTP GET endpoints:
 - `/youtube_detail` - returns specific details about a YouTube video.
 - `/pdf_transcript` - returns a transcript from a provided PDF document URL.
 - `/tweet` - returns specific details about a tweet.
+- `/mermaid_graph` with `?encoded_graph=` returns a url for a mermaid graph
 
 ## Usage
 

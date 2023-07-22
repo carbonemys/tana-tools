@@ -43,5 +43,17 @@ def tweet_endpoint():
     else:
         return content
 
+@app.route('/mermaid_graph')
+def base64_encode():
+    encoded_graph = request.args.get('encoded_graph')
+    import base64
+    import urllib.parse
+    decoded_string = urllib.parse.unquote(encoded_graph)
+    graphbytes = decoded_string.encode("ascii")
+    base64_bytes = base64.b64encode(graphbytes)
+    base64_string = base64_bytes.decode("ascii")
+    print("https://mermaid.ink/img/" + base64_string)
+    return "https://mermaid.ink/img/" + base64_string
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

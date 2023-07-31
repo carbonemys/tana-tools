@@ -52,8 +52,10 @@ def base64_encode():
     graphbytes = decoded_string.encode("ascii")
     base64_bytes = base64.b64encode(graphbytes)
     base64_string = base64_bytes.decode("ascii")
-    print("https://mermaid.ink/img/" + base64_string)
-    return "https://mermaid.ink/img/" + base64_string
+    link = "https://mermaid.ink/img/" + base64_string
+    markdown = "- ![Diagram]" + "(" + link + ")"
+    print(markdown)
+    return markdown
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

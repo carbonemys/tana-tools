@@ -7,6 +7,8 @@ def extract_youtube_id(url):
     if "youtube.com/watch" in url:
         return url.split("v=")[1].split("&")[0]
     elif "youtu.be/" in url:
+        return url.split("/")[-1].split("?")[0]
+    elif "youtube.com/shorts" in url:
         return url.split("/")[-1]
     else:
         return url

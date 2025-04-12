@@ -5,6 +5,7 @@ from utils.extract_youtube_id import extract_youtube_id
 
 def youtube_transcript(youtube_url, newline=False):
     youtube_id = extract_youtube_id(youtube_url)
+    print(youtube_id)
     transcript = YouTubeTranscriptApi.get_transcript(youtube_id)
     formatter = TextFormatter()
     raw_text = formatter.format_transcript(transcript)
@@ -13,3 +14,5 @@ def youtube_transcript(youtube_url, newline=False):
         raw_text = raw_text.replace('\n', ' ')
 
     return raw_text
+
+youtube_transcript("https://www.youtube.com/watch?v=vgZbaVhIMAs")
